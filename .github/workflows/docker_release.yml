@@ -4,9 +4,6 @@ on:
   push:
     tags: 
       - morph-v*
-    branches:
-      - main
-      - release/*
 
 env:
   IMAGE_NAME: go-ethereum
@@ -18,7 +15,6 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-    - name: Checkout code
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0 # Ensure the full history is fetched so tags are available
